@@ -12,9 +12,12 @@ struct Your_artApp: App {
     
     @State var tabIndex = 1
     
+    let standardAppearance = UITabBarAppearance()
+    
+    
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.systemGray4
-        }
+        UITabBar.appearance().backgroundColor = UIColor.systemGray6
+    }
     
     var body: some Scene {
         WindowGroup {
