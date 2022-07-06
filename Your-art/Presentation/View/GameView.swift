@@ -11,27 +11,23 @@ struct GameView: View {
     var body: some View {
         VStack {
             HStack {
-                NavigationLink(destination: {
-                    HomeView()
-                }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.blue)
-                    Text("Back")
-                        .foregroundColor(.blue)
+                VStack {
+                    Text("Your score:")
+                    Text("100")
                 }
                 .padding(20)
                 Spacer()
-                VStack{
+                VStack {
                     Image(systemName: "crown")
                     Text("Achivments")
                         .foregroundColor(.black)
-                        .font(.system(size: 18, weight: .medium, design: .rounded))
                 }
                 .padding(20)
             }
-            .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .center)
-            Spacer()
-            Spacer()
+            .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .bottom)
+            .padding(20)
+            .font(.system(size: 18, weight: .medium, design: .rounded))
+            
             NavigationLink(destination: {
                 PlayView()
             }) {
@@ -39,9 +35,8 @@ struct GameView: View {
                     .foregroundColor(.black)
                     .font(.system(size: 60, weight: .medium, design: .rounded))
             }
-            Text("Your score:")
-            Text("100")
-            Spacer()
+            .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .center)
+            .padding(110)
             Text("Some facts from database or something.")
                 .foregroundColor(.black)
                 .font(.system(size: 18, weight: .medium, design: .rounded))
@@ -56,7 +51,6 @@ struct GameView: View {
                 .scaledToFill()
                 .ignoresSafeArea()
                 .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height))
-        .navigationBarHidden(true)
         .ignoresSafeArea()
     }
 }
