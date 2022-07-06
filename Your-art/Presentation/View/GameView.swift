@@ -16,7 +16,9 @@ struct GameView: View {
                     Text("100")
                 }
                 .padding(20)
+
                 Spacer()
+
                 VStack {
                     Image(systemName: "crown")
                     Text("Achivments")
@@ -27,7 +29,7 @@ struct GameView: View {
             .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .bottom)
             .padding(20)
             .font(.system(size: 18, weight: .medium, design: .rounded))
-            
+
             NavigationLink(destination: {
                 PlayView()
             }) {
@@ -37,12 +39,14 @@ struct GameView: View {
             }
             .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .center)
             .padding(110)
+
             Text("Some facts from database or something.")
                 .foregroundColor(.black)
                 .font(.system(size: 18, weight: .medium, design: .rounded))
                 .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 200, alignment: .center)
                 .border(Color.black)
                 .padding(20)
+
             Spacer()
         }
         .background(

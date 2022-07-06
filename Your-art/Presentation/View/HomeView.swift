@@ -38,8 +38,10 @@ struct GamePartOfTabHomeView: View {
                 .scaledToFill()
                 .ignoresSafeArea(.all)
                 .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
+
             VStack {
                 Spacer()
+
                 NavigationLink(destination: {
                     GameView()
                 }) {
@@ -47,8 +49,10 @@ struct GamePartOfTabHomeView: View {
                         .foregroundColor(.black)
                         .font(.system(size: 60, weight: .medium, design: .rounded))
                 }
+
                 Text("Status")
                     .font(.system(size: 30, weight: .light, design: .rounded))
+
                 Spacer()
             }
         }
@@ -64,8 +68,10 @@ struct OrderPartOfTabHomeView: View {
                 .scaledToFill()
                 .ignoresSafeArea(.all)
                 .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
+
             VStack {
                 Spacer()
+
                 NavigationLink(destination: {
                     OrderView()
                 }) {
@@ -73,8 +79,10 @@ struct OrderPartOfTabHomeView: View {
                         .foregroundColor(.black)
                         .font(.system(size: 60, weight: .medium, design: .rounded))
                 }
+
                 Text("Status")
                     .font(.system(size: 30, weight: .light, design: .rounded))
+                
                 Spacer()
             }
         }

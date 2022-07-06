@@ -14,7 +14,6 @@ struct Your_artApp: App {
     
     let standardAppearance = UITabBarAppearance()
     
-    
     init() {
         UITabBar.appearance().backgroundColor = UIColor.systemGray6
     }
