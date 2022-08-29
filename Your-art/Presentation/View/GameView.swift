@@ -10,7 +10,7 @@ import SwiftUI
 struct GameView: View {
     var body: some View {
         VStack {
-            HStack {
+            HStack(alignment: .bottom) {
                 VStack {
                     Text("Your score:")
                     Text("100")
@@ -21,13 +21,11 @@ struct GameView: View {
 
                 VStack {
                     Image(systemName: "crown")
-                    Text("Achivments")
+                    Text("Achievements")
                         .foregroundColor(.black)
                 }
                 .padding(20)
             }
-            .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .bottom)
-            .padding(20)
             .font(.system(size: 18, weight: .medium, design: .rounded))
 
             NavigationLink(destination: {
@@ -37,17 +35,18 @@ struct GameView: View {
                     .foregroundColor(.black)
                     .font(.system(size: 60, weight: .medium, design: .rounded))
             }
-            .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .center)
-            .padding(110)
+            .frame(height: 150)
+            .frame(maxWidth: .infinity)
+            .padding([.top, .bottom], 110)
 
-            Text("Some facts from database or something.")
-                .foregroundColor(.black)
-                .font(.system(size: 18, weight: .medium, design: .rounded))
-                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 200, alignment: .center)
+            ZStack {
+                Text("Some facts from database or something.")
+                    .foregroundColor(.black)
+                    .font(.system(size: 18, weight: .medium, design: .rounded))
+            }
+            .frame(maxWidth: .infinity, maxHeight: 200, alignment: .center)
                 .border(Color.black)
                 .padding(20)
-
-            Spacer()
         }
         .background(
             Image("GameBackground")
@@ -55,12 +54,14 @@ struct GameView: View {
                 .scaledToFill()
                 .ignoresSafeArea()
                 .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height))
-        .ignoresSafeArea()
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+//        NavigationView {
+            GameView()
+//        }
     }
 }

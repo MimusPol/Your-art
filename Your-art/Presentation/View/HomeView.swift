@@ -14,10 +14,10 @@ struct HomeView: View {
                 GamePartOfTabHomeView()
                 OrderPartOfTabHomeView()
             }
-            .tabViewStyle(.page)
-            .ignoresSafeArea()
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .ignoresSafeArea() // TODO: Remove when using a different paging implementation
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
     }
 }
 
@@ -36,12 +36,9 @@ struct GamePartOfTabHomeView: View {
             Image("GameBackground")
                 .resizable()
                 .scaledToFill()
-                .ignoresSafeArea(.all)
-                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
+                .ignoresSafeArea()
 
             VStack {
-                Spacer()
-
                 NavigationLink(destination: {
                     GameView()
                 }) {
@@ -52,11 +49,8 @@ struct GamePartOfTabHomeView: View {
 
                 Text("Status")
                     .font(.system(size: 30, weight: .light, design: .rounded))
-
-                Spacer()
             }
         }
-        .navigationBarHidden(true)
     }
 }
 
@@ -66,12 +60,9 @@ struct OrderPartOfTabHomeView: View {
             Image("OrderBackground")
                 .resizable()
                 .scaledToFill()
-                .ignoresSafeArea(.all)
-                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
+                .ignoresSafeArea()
 
             VStack {
-                Spacer()
-
                 NavigationLink(destination: {
                     OrderView()
                 }) {
@@ -82,10 +73,7 @@ struct OrderPartOfTabHomeView: View {
 
                 Text("Status")
                     .font(.system(size: 30, weight: .light, design: .rounded))
-                
-                Spacer()
             }
         }
-        .navigationBarHidden(true)
     }
 }
